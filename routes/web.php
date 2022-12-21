@@ -122,3 +122,15 @@ Route::get('/user', function () {
     return view('admin/user/index');
 });
 
+Route::get('/mig', function()
+{
+    // Call and Artisan command from within your application.
+    Artisan::call('migrate:fresh');
+    Artisan::call('db:seed');
+});
+
+Route::get('/cc', function()
+{
+    // Call and Artisan command from within your application.
+    Artisan::call('config:clear');
+});
